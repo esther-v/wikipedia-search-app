@@ -1,0 +1,21 @@
+img{
+    width: 30%;
+}
+
+form{
+    position: relative;
+    button{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        border: none;
+        outline: none;
+    }
+    i{
+        font-size: 1.6rem;
+        color: rgb(55, 72, 77);
+    }
+}
+.hide{
+    display: none;
+}
