@@ -43,17 +43,17 @@ const displayResults = (results) => {
     line.style.display = "block";
     let output = "";
     results.query.search.forEach((result) => {
-        let resultURL = `https://en.wikipedia.org/?curid=`;
+        let resultURL = `https://en.wikipedia.org/?curid=${result.pageid}`;
         output += `
         <div class="result p-2">
-            <a href="" target="_blank" rel="noopener" class="h3 fw-bold">Love</a>
+            <a href="${resultURL}" target="_blank" rel="noopener" class="h3 fw-bold">${result.title}</a>
             <br>
-            <a href="" target="_blank" rel="noopener" class="fs-5 text-success">https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal</a>
+            <a href="${resultURL}" target="_blank" rel="noopener" class="fs-5 text-success">${resultURL}</a>
             <p class="fs-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae inventore eligendi officia ducimus aut, vero id voluptatibus nulla natus velit.
+            ${result.snippet}
             </p>
         </div>
-        `
-
+        `;
+        searchResults.innerHTML = output;
     })
 }
